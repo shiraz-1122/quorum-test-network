@@ -1,0 +1,6 @@
+2021.06.10-21:00:47.055[90m debug[39m [caliper] [rateControl.js] 	Constructed a winston logger with the specified settings
+2021.06.10-21:00:47.139[32m info [39m [caliper] [bind] 	User-provided arguments for npm: "-g"
+2021.06.10-21:00:47.139[32m info [39m [caliper] [bind] 	Binding for besu@latest. This might take some time...
+2021.06.10-21:00:47.139[32m info [39m [caliper] [bind] 	Using working directory: /home/brunocosta/projetos/claudio/quorum-test-network
+2021.06.10-21:00:47.140[32m info [39m [caliper] [bind] 	Calling npm with: install -g web3@1.2.2
+2021.06.14-19:35:54.850[90m debug[39m [caliper] [rateControl.js] 	Constructed a winston logger with the specified settings

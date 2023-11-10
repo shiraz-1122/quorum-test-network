@@ -1,0 +1,27 @@
+{
+    "caliper": {
+        "blockchain": "ethereum",
+        "command" : {
+            "start": "docker-compose -f network/ethereum/1node-clique/docker-compose.yml up -d && sleep 3",
+            "end" : "docker-compose -f network/ethereum/1node-clique/docker-compose.yml down"
+          }
+    },
+    "ethereum": {
+        "url": "ws://localhost:8546",
+        "contractDeployerAddress": "0x627306090abaB3A6e1400e9345bC60c78a8BEf57",
+        "contractDeployerAddressPassword": "8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63",
+        "fromAddress": "0x627306090abaB3A6e1400e9345bC60c78a8BEf57",
+        "fromAddressPassword": "8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63",
+        "transactionConfirmationBlocks": 2,
+        "contracts": {
+            "RsuReputation": {
+                "path": "./RsuReputation.json",
+                "gas": {
+                    "open": 45000,
+                    "query": 100000,
+                    "transfer": 70000
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+test:
+  clients:
+    type: local
+    number: 5
+  rounds:
+  - label: init
+    txNumber: 500
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: benchmarks/samples/fabric/marbles/init.js
+  - label: query
+    txDuration: 60
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 5
+    workload:
+      module: benchmarks/samples/fabric/marbles/query.js
+observer:
+  type: prometheus
+  interval: 5
+monitor:
+  interval: 1
+  type: ['docker', 'prometheus']
+  docker:
+    containers: ['all']
+  prometheus:
+    url: "http://prometheus:9090"
+    push_url: "http://pushGateway:9091"
+    metrics:
+      ignore: [prometheus, pushGateway, cadvisor, grafana, node-exporter]
+      include:
+        Endorse Time (s):
+          query: rate(endorser_propsal_duration_sum{chaincode="marbles:v0"}[5m])/rate(endorser_propsal_duration_count{chaincode="marbles:v0"}[5m])
+          step: 1
+          label: instance
+          statistic: avg

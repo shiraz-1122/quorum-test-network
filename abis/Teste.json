@@ -1,0 +1,11 @@
+{
+    "name": "The simplest workload contract",
+    "abi": [
+        {
+            "constant":true,
+            "inputs":[
+                {"nam......ype":"function"}],
+    "bytecode": "0x608060405.........b0029",
+    "gas": 259823
+    }]
+            }
